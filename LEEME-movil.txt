@@ -1,0 +1,14 @@
+SANFE - PAQUETE PARA MOVIL
+
+ANDROID - USO DIRECTO
+1. Descarga Sanfe-movil.zip y descomprímelo.
+2. Abre Sanfe-android.html y elige Chrome.
+
+IPHONE O INSTALACION EN LA PANTALLA DE INICIO
+1. Publica la carpeta de la app en un alojamiento HTTPS, como GitHub Pages o Netlify.
+2. Abre esa dirección con Safari en el iPhone.
+3. Pulsa Compartir y elige Añadir a pantalla de inicio.
+
+index.html, manifest.webmanifest y service-worker.js forman la versión PWA. La PWA necesita HTTPS para instalarse y ofrecer uso sin conexión.
+
+La app no requiere instalar dependencias. Fotos, eventos y asistencias se guardan en el navegador y no se sincronizan automáticamente entre dispositivos.

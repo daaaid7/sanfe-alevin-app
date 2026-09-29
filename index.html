@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101410" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Sanfe | El equipo, en juego</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/icon-192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegación principal">
+        <a class="brand" href="#clasificacion" aria-label="Sanfe, ir a clasificación">
+          <img class="brand-logo" src="assets/sanfe-crest.png" alt="" />
+          <span class="brand-copy"><strong>SANFE</strong><small>CLUB DE FÚTBOL</small></span>
+        </a>
+        <div class="season-label">TEMPORADA <span>2026 / 27</span></div>
+        <nav class="main-nav" id="main-nav">
+          <button class="nav-link is-active" data-view="clasificacion" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h17M8 15l3-4 3 2 5-7" /></svg><span>Clasificación</span></button>
+          <button class="nav-link" data-view="plantilla"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3 2.4-5 5.5-5s5.5 2 5.5 5M16 5.5a3 3 0 0 1 0 5.8M17 15c2.3.3 3.5 2 3.5 4"/></svg><span>Plantilla</span><span class="nav-count">22</span></button>
+          <button class="nav-link" data-view="resultados"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3.5 7.5v9L12 21l8.5-4.5v-9L12 3Z"/><path d="m8 9 4-2 4 2v5l-4 2-4-2V9Zm0 0 4 2 4-2m-4 2v5"/></svg><span>Resultados</span></button>
+          <button class="nav-link" data-view="calendario"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M7.5 3v4m9-4v4M4 9.5h16M8 13h.01M12 13h.01M16 13h.01M8 16.5h.01M12 16.5h.01"/></svg><span>Calendario</span></button>
+          <button class="nav-link" data-view="galeria"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3.5" width="18" height="17" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m4 17 5-5 3 3 3-4 5 6"/></svg><span>Galería</span></button>
+          <button class="nav-link" data-view="asistencia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z"/><path d="M4 17a2.5 2.5 0 0 1 2.5-2.5H20M9 8l2 2 4-4"/></svg><span>Asistencia</span><span class="nav-dot"></span></button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="next-training"><span class="live-dot"></span><span>PRÓXIMO ENTRENAMIENTO</span><strong>Miércoles 30</strong><small>Jaén - Jamarguillo</small></div>
+          <button class="profile-button" aria-label="Perfil de Marcos Ruiz"><span class="avatar avatar-self">MR</span><span class="profile-copy"><strong>Marcos Ruiz</strong><small>Jugador · #8</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></button>
+        </div>
+      </aside>
+      <main class="main-content">
+        <header class="topbar">
+          <div class="mobile-brand"><img class="brand-logo" src="assets/sanfe-crest.png" alt="" /><strong>SANFE</strong></div>
+          <div class="breadcrumb"><span>Sanfe</span><span class="breadcrumb-slash">/</span><strong id="breadcrumb-current">Clasificación</strong></div>
+          <div class="topbar-right"><span class="season-pill"><span></span> 4.ª Andaluza Alevín · Grupo 5</span><button class="mode-switch" id="mode-switch" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m8-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg><span>Modo padre / jugador</span></button><button class="notification-button" aria-label="Notificaciones"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9m-8 12h4"/></svg><i></i></button></div>
+        </header>
+        <section class="page-content" id="page-content" aria-live="polite"></section>
+        <footer class="mobile-footer">SANFE <span>·</span> JUNTOS HASTA EL FINAL</footer>
+      </main>
+    </div>
+    <dialog class="app-dialog" id="coach-dialog" aria-labelledby="coach-dialog-title">
+      <form id="coach-form">
+        <span class="eyebrow">ACCESO RESTRINGIDO</span>
+        <h2 id="coach-dialog-title">Modo entrenador</h2>
+        <p>Introduce el código del equipo para gestionar la plantilla, el calendario y la asistencia.</p>
+        <label for="coach-code">Código de acceso</label>
+        <input id="coach-code" name="code" type="password" inputmode="numeric" autocomplete="one-time-code" maxlength="4" pattern="[0-9]{4}" required />
+        <span class="dialog-error" id="coach-error" role="alert" hidden>Código incorrecto. Inténtalo de nuevo.</span>
+        <div class="dialog-actions"><button class="outline-button" id="coach-cancel" type="button">Cancelar</button><button class="solid-button" type="submit">Entrar</button></div>
+      </form>
+    </dialog>
+    <dialog class="app-dialog" id="editor-dialog" aria-labelledby="editor-title">
+      <form id="editor-form">
+        <span class="eyebrow">MODO ENTRENADOR</span>
+        <h2 id="editor-title">Editar datos</h2>
+        <div class="editor-fields" id="editor-fields"></div>
+        <div class="dialog-actions"><button class="outline-button" id="editor-cancel" type="button">Cancelar</button><button class="solid-button" type="submit">Guardar</button></div>
+      </form>
+    </dialog>
+    <script src="app.js"></script>
+    <script>
+      if ("serviceWorker" in navigator && location.protocol !== "file:") {
+        navigator.serviceWorker.register("./service-worker.js").catch(() => {});
+      }
+    </script>
+  </body>
+</html>
